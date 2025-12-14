@@ -24,7 +24,7 @@ class EEVelTeleopGUI:
         self.filter_pub = rospy.Publisher("/unified_velocity_controller/joint_velocity_filter", Float64, queue_size=1)
 
         self.root = tk.Tk()
-        self.root.title("VEE Velocity Teleop")
+        self.root.title("Cartesian Space Velocity Teleop")
         self.active_cmd = None
         self.cmd = Twist()
 
