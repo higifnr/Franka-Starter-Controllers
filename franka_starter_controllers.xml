@@ -1,0 +1,36 @@
+<library path="lib/libfranka_starter_controllers">
+  <class name="franka_starter_controllers/CartesianVelocityController"
+         type="franka_starter_controllers::CartesianVelocityController"
+         base_class_type="controller_interface::ControllerBase">
+    <description>
+      Modified version of cartesian_velocity_example_controller that accepts commands from topic.
+    </description>
+  </class>
+
+    <class name="franka_starter_controllers/SimpleJointVelocityController"
+         type="franka_starter_controllers::SimpleJointVelocityController"
+         base_class_type="controller_interface::ControllerBase">
+    <description>
+      Modified version of joint_velocity_example_controller that accepts commands from topic with low-pass filter.
+    </description>
+  </class>
+
+  <class name="franka_starter_controllers/JointVelocityController"
+         type="franka_starter_controllers::JointVelocityController"
+         base_class_type="controller_interface::ControllerBase">
+    <description>
+      Modified version of joint_velocity_example_controller that accepts commands from topic with low-pass filter.
+    </description>
+  </class>
+
+  <class name="franka_starter_controllers/UnifiedVelocityController"
+         type="franka_starter_controllers::UnifiedVelocityController"
+         base_class_type="controller_interface::ControllerBase">
+    <description>
+      Inverse velocity kinematics built on top of joint_velocity_controller, accepts both joint velocity and cartesian velocity commands.
+    </description>
+  </class>
+
+
+
+</library>

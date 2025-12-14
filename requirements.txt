@@ -1,0 +1,2 @@
+you need to pip install the following packages because they're not available in rosdep:
+    pip install spatialmath-python

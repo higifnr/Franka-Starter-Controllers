@@ -1,0 +1,12 @@
+<!-- This file loads the controller if you have rviz and franka_control already up-->
+<!-- Closing this launch file will also unload the controller EVEN IF IT WASN'T LOADED USING THIS FILE-->
+<!--WARNING: Loading the controllers directly without these launch files will not work because they require arg substitution-->
+<launch>
+  <arg name="robot" default="panda" doc="choose your robot. Possible values: [panda, fr3]"/>
+  <arg name="arm_id" default="$(arg robot)" />
+  <!-- Load the Cartesian velocity controller separately -->
+  <param name="/arm_id" value="$(arg arm_id)" />
+  <rosparam file="$(find franka_starter_controllers)/config/all_controllers.yaml"
+            command="load" subst_value="true"/>
+
+</launch>

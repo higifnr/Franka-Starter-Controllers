@@ -1,0 +1,4 @@
+cartesian_velocity_controller:
+  type: franka_starter_controllers/CartesianVelocityController
+  arm_id: $(arg arm_id)
+
