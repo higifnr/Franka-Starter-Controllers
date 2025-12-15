@@ -1,6 +1,6 @@
 # Franka Starter Controllers
 
-This repository contains plug and play controllers packge for the Franka Emika Panda and Franka Reasearch 3 robots that work both on the physical robot and in simulation*.  
+This repository contains a plug and play controllers package for the Franka Emika Panda and Franka Reasearch 3 robots that work both on the physical robot and in simulation*.  
 
 This package is intended for beginners at ROS in general and the Franka ecosystem in particular. 
 
