@@ -69,7 +69,7 @@ Load all the controllers this package has to offer:
 roslaunch franka_starter_controllers load_all_controllers.launch
 ```
 
-Activate whatever controller you want (for example: joint_velocity_controller):
+Activate whatever controller you want (for example: simple_joint_velocity_controller):
 ```bash
 rosrun controller_manager spawner simple_joint_velocity_controller
 ```
