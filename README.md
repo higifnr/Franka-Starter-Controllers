@@ -11,6 +11,7 @@ For the time being it only supports ROS1 Noetic since a lot of setups are still 
 
 
 **franka_ros >= 0.8.0** for the controllers to work on the real robot (earlier version may or not work since I haven't tested them)
+
 **franka_gazebo >= 0.9.0** for the controllers to work in simulation (Franka did not expose the necessary interfaces in simulation prior to this version)
 
 Notes: 
