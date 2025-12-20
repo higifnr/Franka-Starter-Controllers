@@ -1,12 +1,25 @@
 # Franka Starter Controllers
 
-This repository contains plug and play controllers packge for the Franka Emika Panda and Franka Reasearch 3 robots that work both on the physical robot and in simulation*.  
+This repository contains a plug and play controllers package for the Franka Emika Panda and Franka Reasearch 3 robots that work both on the physical robot and in simulation*.  
 
 This package is intended for beginners at ROS in general and the Franka ecosystem in particular. 
 
 For the time being it only supports ROS1 Noetic since a lot of setups are still using it (including mine), with plans to eventually grow it into ROS2 Humble.
 
 *all controllers, except cartesian_velocity_controller *technically* work in simulation, once you run them you'll understand why franka only included predefined paths in their gazebo implementation. The inclusion of this controller is just a proof of concept since unified_velocity_controller is better in almost every way.
+## Requirements
+
+
+**franka_ros >= 0.8.0** for the controllers to work on the real robot (earlier version may or not work since I haven't tested them)
+
+**franka_gazebo >= 0.9.0** for the controllers to work in simulation (Franka did not expose the necessary interfaces in simulation prior to this version)
+
+Notes: 
+- I'm only specifying franka_gazebo version because that's the only subpackage with issues, you can install the entire franka_ros pacakge in 0.9.0 to make things simpler.
+- If you want to go through the monumental task of writing a controller for versions prior to 0.9.0, please do note that prior to 0.8.1, the controller manager is hosted in a separate namespace (which you can verify in panda.launch line 40). The namespace is equal to the arm_id launch argument. 
+
+
+
 ## Features
 
 Plug and play controllers that function using libfranka and franka_ros, accept external commands via topics to move the robot (unlike the predefined "franka_example_controllers" from franka_ros).
@@ -69,7 +82,7 @@ Load all the controllers this package has to offer:
 roslaunch franka_starter_controllers load_all_controllers.launch
 ```
 
-Activate whatever controller you want (for example: joint_velocity_controller):
+Activate whatever controller you want (for example: simple_joint_velocity_controller):
 ```bash
 rosrun controller_manager spawner simple_joint_velocity_controller
 ```
